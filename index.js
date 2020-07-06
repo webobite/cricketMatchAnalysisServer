@@ -5,7 +5,6 @@ const express = require('express');
 
 const app = express();
 const server = http.createServer(app);
-var port = process.env.PORT || 8080;
 
 const dataRoute = require('./routes/main.route');
 
