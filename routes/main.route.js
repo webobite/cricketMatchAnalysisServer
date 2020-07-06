@@ -15,7 +15,7 @@ router.get('/', async(req, res) => {
  * Route to upload the file and same CSV will be converted 
  * into array of Objects and sent back as response.
  */
-router.post('/upload-csv', upload.single('file'), function (req, res) {
+router.post('/upload-csv', upload.single('file'), function async(req, res) {
     csv().fromFile(req.file.path)
       .then((jsonObj) => {
         console.log("Json Obj : : : ", jsonObj);
