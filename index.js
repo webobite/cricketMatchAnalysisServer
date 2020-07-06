@@ -5,7 +5,7 @@ const express = require('express');
 
 const app = express();
 const server = http.createServer(app);
-const port = process.env.port || 3000;
+var port = process.env.PORT || 8080;
 
 const dataRoute = require('./routes/main.route');
 
@@ -14,8 +14,8 @@ app.use('/api', dataRoute);
 
 // Start server
 function startServer() {
-  server.listen(port, function () {
-    console.log('Express server listening on ', port);
+  server.listen(process.env.PORT || 8080, function () {
+    console.log('Express server listening on ', process.env.PORT || 8080);
   });
 }
 
